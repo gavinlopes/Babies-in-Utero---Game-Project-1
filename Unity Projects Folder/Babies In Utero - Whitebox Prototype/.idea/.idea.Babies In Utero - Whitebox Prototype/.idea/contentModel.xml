@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Nathan E\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Nathan E\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Babies In Utero - Whitebox Prototype.-695858252.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Nathan E\Documents\_School\Fall 2020\Babies-in-Utero---Game-Project-1\Unity Projects Folder\Babies In Utero - Whitebox Prototype" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="itseez3d" t="Include">
+          <e p="avatar_maker" t="Include">
+            <e p="resources" t="Include">
+              <e p="AvatarUnlitHairShader.shader" t="Include" />
+              <e p="AvatarUnlitShader.shader" t="Include" />
+            </e>
+            <e p="scripts" t="Include">
+              <e p="AvatarInfo.cs" t="Include" />
+              <e p="AvatarMakerInitializer.cs" t="Include" />
+              <e p="editor" t="Include">
+                <e p="AnimationClipModifier.cs" t="Include" />
+                <e p="AvatarMakerEditor.cs" t="Include" />
+                <e p="AvatarMakerWindow.cs" t="Include" />
+                <e p="BaseWindow.cs" t="Include" />
+                <e p="Export.cs" t="Include" />
+                <e p="MotionCaptureWindow.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="DOCUMENTATION.txt" t="Include" />
+          <e p="third_party_notices.txt" t="Include" />
+        </e>
+        <e p="scripts" t="Include">
+          <e p="camControl.cs" t="Include" />
+          <e p="swapCams.cs" t="Include" />
+          <e p="walk.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="Outline.shader" t="Include" />
+          <e p="SpecialFXCoolHologram.shader" t="Include" />
+        </e>
+      </e>
+      <e p="Babies In Utero - Whitebox Prototype.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
