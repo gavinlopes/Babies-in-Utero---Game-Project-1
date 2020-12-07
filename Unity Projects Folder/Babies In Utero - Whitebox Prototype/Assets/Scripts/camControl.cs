@@ -21,5 +21,11 @@ public class camControl : MonoBehaviour
 		
 		myBody.localRotation = Quaternion.AngleAxis (mD.x, Vector3.up);
 		
+        mD.y = Mathf.Clamp(mD.y, -90, 90);
+        if (mD.y < -90 || mD.y > 90 ) 
+        {
+            print(myBody.name + " Y: " + mD.y);
+        }
     }
+    
 }

@@ -7,7 +7,7 @@ public class ListenForVRMode : MonoBehaviour
     public Bool_SO boolSO;
     public GameObject vrObj;
     public GameObject notVrObj;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +21,5 @@ public class ListenForVRMode : MonoBehaviour
         vrObj.active = boolSO.isTrue;
         notVrObj.active = !boolSO.isTrue;
     }
+
 }
