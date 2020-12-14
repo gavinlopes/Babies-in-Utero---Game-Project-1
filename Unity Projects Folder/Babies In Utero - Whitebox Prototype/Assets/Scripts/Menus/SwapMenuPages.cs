@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwapMenuPages : MonoBehaviour
@@ -10,8 +8,10 @@ public class SwapMenuPages : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
 }

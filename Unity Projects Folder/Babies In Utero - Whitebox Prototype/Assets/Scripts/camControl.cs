@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class camControl : MonoBehaviour
 {
-	private Vector2 mD;
+	public Bool_SO boolSO;
+
+    private Vector2 mD;
 	private Transform myBody;
 	
     void Start()
     {
+        if (boolSO.isTrue == true)
+        {
+            enabled = false;
+        }
         myBody = this.transform.parent.transform;
     }
 
@@ -22,10 +28,7 @@ public class camControl : MonoBehaviour
 		myBody.localRotation = Quaternion.AngleAxis (mD.x, Vector3.up);
 		
         mD.y = Mathf.Clamp(mD.y, -90, 90);
-        if (mD.y < -90 || mD.y > 90 ) 
-        {
-            print(myBody.name + " Y: " + mD.y);
-        }
+        mD.x = Mathf.Clamp(mD.x, -90, 90);
     }
     
 }
