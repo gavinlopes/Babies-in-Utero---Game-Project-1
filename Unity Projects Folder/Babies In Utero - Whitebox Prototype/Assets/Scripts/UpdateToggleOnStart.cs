@@ -16,5 +16,6 @@ public class UpdateToggleOnStart : MonoBehaviour
     {
         //OnStartEvent.Invoke();
         ToggleGO.GetComponent<ToggleController>().isOn = BoolSO.isTrue;
+        ToggleGO.GetComponent<ToggleController>().Start();
     }
 }

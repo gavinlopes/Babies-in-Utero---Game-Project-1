@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class swapCams : MonoBehaviour
@@ -11,6 +9,9 @@ public class swapCams : MonoBehaviour
 	public Camera BabyCam;
 
     public DropDown_SO dropDownSO;
+
+    public List<GameObject> playerObj = new List<GameObject>();
+    public List<GameObject> babyObj = new List<GameObject>();
 	
 
     void Start()
@@ -24,6 +25,15 @@ public class swapCams : MonoBehaviour
             MainReticle.transform.localScale = Vector3.one;
             MainReticle.GetComponent<GvrReticlePointer>().overridePointerCamera=PlayerCam;
             BabyCam.gameObject.SetActive(false);
+            
+            for (int i = 0; i < playerObj.Count; i++)
+                {
+                    playerObj[i].SetActive(true);
+                }
+            for (int i = 0; i < babyObj.Count; i++)
+                {
+                    babyObj[i].SetActive(false);
+                }
         }
         else
         {
@@ -34,6 +44,15 @@ public class swapCams : MonoBehaviour
             MainReticle.transform.localScale = Vector3.one;
             MainReticle.GetComponent<GvrReticlePointer>().overridePointerCamera=BabyCam;
             PlayerCam.gameObject.SetActive(false);
+            
+            for (int i = 0; i < playerObj.Count; i++)
+                {
+                    playerObj[i].SetActive(false);
+                }
+            for (int i = 0; i < babyObj.Count; i++)
+                {
+                    babyObj[i].SetActive(true);
+                }
         }
     }
 
@@ -48,6 +67,15 @@ public class swapCams : MonoBehaviour
             MainReticle.transform.localScale = Vector3.one;
             MainReticle.GetComponent<GvrReticlePointer>().overridePointerCamera=PlayerCam;
             BabyCam.gameObject.SetActive(false);
+            
+            for (int i = 0; i < playerObj.Count; i++)
+                {
+                    playerObj[i].SetActive(true);
+                }
+            for (int i = 0; i < babyObj.Count; i++)
+                {
+                    babyObj[i].SetActive(false);
+                }
         }
         else
         {
@@ -58,6 +86,15 @@ public class swapCams : MonoBehaviour
             MainReticle.transform.localScale = Vector3.one;
             MainReticle.GetComponent<GvrReticlePointer>().overridePointerCamera=BabyCam;
             PlayerCam.gameObject.SetActive(false);
+            
+            for (int i = 0; i < playerObj.Count; i++)
+                {
+                    playerObj[i].SetActive(false);
+                }
+            for (int i = 0; i < babyObj.Count; i++)
+                {
+                    babyObj[i].SetActive(true);
+                }
         }
     }
 

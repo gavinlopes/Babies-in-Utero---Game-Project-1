@@ -44,7 +44,7 @@ public class ToggleController : MonoBehaviour
 	}
 
 
-	void Start()
+	public void Start()
 	{
 		if(isOn)
 		{
