@@ -10,8 +10,8 @@ public class camControl : MonoBehaviour
 	private Transform myBody;
 
     public float speed = 3.5f;
-    //private float X;
-    //private float Y;
+    private float X;
+    private float Y;
 	
     void Start()
     {
@@ -22,7 +22,7 @@ public class camControl : MonoBehaviour
         myBody = this.transform.parent.transform;
     }
 
-    void Update()
+    /*void Update()
     {
         if(Input.GetMouseButton(0)) 
         {
@@ -35,9 +35,9 @@ public class camControl : MonoBehaviour
         }
         mD.y = Mathf.Clamp(mD.y, -90, 90);
         mD.x = Mathf.Clamp(mD.x, -90, 90);
-    }
+    }*/
 
-    /*void Update()
+    void Update()
     {
         Vector2 mC = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 		mD += mC;
@@ -48,7 +48,7 @@ public class camControl : MonoBehaviour
 		
         mD.y = Mathf.Clamp(mD.y, -90, 90);
         mD.x = Mathf.Clamp(mD.x, -90, 90);
-    }*/
+    }
     
     /*void Update() 
     {
@@ -62,8 +62,8 @@ public class camControl : MonoBehaviour
             
         }
         
-        Y = Mathf.Clamp(Y, 0, 0);
-        X = Mathf.Clamp(X, 0, 0);
+        //Y = Mathf.Clamp(Y, 0, 0);
+        //X = Mathf.Clamp(X, 0, 0);
     }*/
     
 }

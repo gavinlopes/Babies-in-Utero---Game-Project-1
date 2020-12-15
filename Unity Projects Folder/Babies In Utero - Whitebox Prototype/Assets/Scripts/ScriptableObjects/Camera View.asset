@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2920a2284eab94743a1f4e430bd43301, type: 3}
   m_Name: Camera View
   m_EditorClassIdentifier: 
-  DropdownIndex: 1
+  DropdownIndex: 0
