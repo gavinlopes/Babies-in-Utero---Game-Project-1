@@ -205,6 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136070178}
   - component: {fileID: 136070179}
+  - component: {fileID: 136070181}
   - component: {fileID: 136070180}
   m_Layer: 5
   m_Name: Slider
@@ -278,7 +279,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1925957834}
   m_HandleRect: {fileID: 1421357445}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -287,6 +288,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 845c32bfc6ba9484a9daf288e322c733, type: 2}
         m_MethodName: UpdateInt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 136070181}
+        m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -310,6 +322,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloatSliderSO: {fileID: 11400000, guid: 845c32bfc6ba9484a9daf288e322c733, type: 2}
   SliderGO: {fileID: 136070177}
+--- !u!114 &136070181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136070177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b350985c7f9eacc4384aa8ffbda56f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 86800f77877ff2641bf763f5a12160b7, type: 2}
 --- !u!1 &183511512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.000059628797, y: -47.042595}
+  m_AnchoredPosition: {x: 0.000059628797, y: -81.50001}
   m_SizeDelta: {x: 583, y: 163}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &328471902
@@ -6258,7 +6283,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 801934332}
   m_HandleRect: {fileID: 1007026505}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -6294,7 +6319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421098761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5798ac92a03dc64283a5ffc093df988, type: 3}
   m_Name: 
@@ -7889,8 +7914,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746237577}
   m_HandleRect: {fileID: 746237576}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.49999994
+  m_Value: 1
+  m_Size: 0.99659175
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9143,7 +9168,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 350408939}
   m_HandleRect: {fileID: 750667599}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0

@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    /*void Awake()
+    void Awake()
     {
         foreach (Sound s in sounds)
         {
@@ -31,6 +31,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
-    }*/
+    }
     //FindObjectOfType<AudioManager>().Play("Intro");
 }
