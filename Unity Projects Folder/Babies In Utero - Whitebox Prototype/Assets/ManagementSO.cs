@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ManagementSO : MonoBehaviour
 {
+    //This is to make sure SOs work when changeing scenes
     public FloatSlider_SO mus;
     public FloatSlider_SO aud;
     public FloatSlider_SO vic;
     public Bool_SO mySight;
+    public Bool_SO myWhatViewing;
 
     private void Start() 
     {
