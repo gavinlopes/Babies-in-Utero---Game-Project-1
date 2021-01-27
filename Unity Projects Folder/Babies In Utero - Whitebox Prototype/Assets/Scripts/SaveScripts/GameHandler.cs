@@ -12,7 +12,7 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         //unit = unitGameObject.GetComponent<IUnit>();
-
+        //Initualize Save System into code
         SaveSystem.Init();
     }
 
@@ -28,6 +28,12 @@ public class GameHandler : MonoBehaviour
         }
     }
 
+    private void SaveJustName() {
+        string childName = GetChildName;//unit.GetChildName();
+
+
+    }
+
     //Save
     private void Save() {
         //Get things to Save
@@ -39,14 +45,14 @@ public class GameHandler : MonoBehaviour
             childSizePH = childSizePH
         };
         string json = JsonUtility.ToJson(saveObject);
-        SaveSystem.Save(json);
+        SaveSystem.Save(json, "DefaultChild");
 
         Debug.Log("Saved! Name: " + childName + ", Size: " + childSizePH);
     }
 
     //Load
     private void Load() {
-        string saveString = SaveSystem.Load();
+        string saveString = SaveSystem.Load("DefaultChild");
         if (saveString != null) {
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             
@@ -54,7 +60,7 @@ public class GameHandler : MonoBehaviour
             //unit.SetChildName(saveObject.childName);
             //unit.SetChildSizePH(saveObject.childSizePH);
 
-            Debug.Log("Loded! Name: " + saveString);
+            Debug.Log("Loded! Name: " + saveObject.childName);
         } else {
             Debug.Log("No Save...");
         }

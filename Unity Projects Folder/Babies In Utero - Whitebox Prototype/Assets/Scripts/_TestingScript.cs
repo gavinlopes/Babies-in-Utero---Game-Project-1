@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class _TestingScript : MonoBehaviour
 {
+    /*
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
     public class Child {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -62,7 +82,7 @@ public class _TestingScript : MonoBehaviour
         Debug.Log("Name: " + childList[1].Name);
         Debug.Log("Size: " + childList[1].Size_PH);
         */
-    }
+   // }
 
 
 }

@@ -10,6 +10,7 @@ public class ManagementSO : MonoBehaviour
     public FloatSlider_SO vic;
     public Bool_SO mySight;
     public Bool_SO myWhatViewing;
+    public ListOfStrings_SO childOrderList;
 
     private void Start() 
     {

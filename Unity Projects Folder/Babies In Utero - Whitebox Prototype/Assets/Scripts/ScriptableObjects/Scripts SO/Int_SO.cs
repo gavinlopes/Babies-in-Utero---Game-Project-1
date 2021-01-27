@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Int_SO : ScriptableObject
 {
-    //public Object SliderObject;
+    //public Object Int_SO;
     public int currentInt;
 
     public void UpdateInt(int v)

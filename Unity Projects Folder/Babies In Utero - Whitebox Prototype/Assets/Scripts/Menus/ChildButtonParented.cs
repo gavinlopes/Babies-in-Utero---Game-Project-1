@@ -5,14 +5,11 @@ using TMPro;
 
 public class ChildButtonParented : MonoBehaviour
 {
-    public Int_SO selectedChildSO;
+    public String_SO selectedChildSO;
+    public string childName;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //this.transform.SetParent(GameObject.Find("ContentParent").transform);
-        //this.transform.SetSiblingIndex(1);
-        
         UpdateChildButton();
     }
 
@@ -23,10 +20,12 @@ public class ChildButtonParented : MonoBehaviour
 
     void UpdateChildButton() 
     {
+        // Check if the .txt file exists for child?
+
+        
         //Variables
         GameObject buttonText = this.transform.GetChild(0).gameObject;
         int siblingIndex = this.transform.GetSiblingIndex();
-        string childName = "Bob";//listThing[siblingIndex].name;
 
         //Rename object the name of child
         this.name = "Button For " + childName;
@@ -37,6 +36,6 @@ public class ChildButtonParented : MonoBehaviour
 
     public void UpdateSelectedChild()
     {
-        selectedChildSO.currentInt = this.transform.GetSiblingIndex();
+        selectedChildSO.currentString = childName;
     }
 }
