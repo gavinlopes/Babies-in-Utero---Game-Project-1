@@ -23,7 +23,7 @@ public static class SaveSystem
         if (File.Exists(SAVE_FOLDER + childName + ".txt")) {
             string saveString = File.ReadAllText(SAVE_FOLDER + childName + ".txt");
             return saveString;
-        } else {
+         } else {
             return null;
         }
     }

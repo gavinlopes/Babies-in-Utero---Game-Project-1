@@ -52,13 +52,24 @@ public class GameHandler : MonoBehaviour
 
     //Load
     private void Load() {
-        string saveString = SaveSystem.Load("DefaultChild");
+        TextAsset file = Resources.Load("DefaultChild") as TextAsset;
+        string saveString = file.ToString();
+        //string saveString = SaveSystem.Load("DefaultChild");
         if (saveString != null) {
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
             
             //Set the Loded things
             //unit.SetChildName(saveObject.childName);
             //unit.SetChildSizePH(saveObject.childSizePH);
+
+            //string saveString = File.ReadAllText(SAVE_FOLDER + childName + ".txt");
+            //string content1 = saveString.ToString ();
+
+            TextAsset files = Resources.Load("DefaultChild") as TextAsset;
+            string content = files.ToString ();
+
+            Debug.Log("Phone aproved: " + content);
+            Debug.Log("PC aproved: " + saveString);
 
             Debug.Log("Loded! Name: " + saveObject.childName);
         } else {

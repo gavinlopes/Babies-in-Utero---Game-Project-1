@@ -1,1 +1,1 @@
-{"childName":"DefaultChild","childSizePH":1.0}
+{"childName":"Default Child","childSizePH":1.5}

@@ -18,6 +18,8 @@ public class LoadBabyStatsAndApply : MonoBehaviour
     //Load
     private void Load() {
         string childName = selectedChildSO.currentString;
+        //TextAsset file = Resources.Load(childName) as TextAsset;
+        //string saveString = file.ToString();
         string saveString = SaveSystem.Load(childName);
         
         if (saveString != null) {
