@@ -9,64 +9,42 @@ public class AddNewChildButton : MonoBehaviour
     // For adding buttons to ContentParent in Hierarchy
     public GameObject ButtonToAdd;
     public GameObject AddChildButton;
-    public ListOfStrings_SO ChildOrderList;
+    public GameObject SaveSystemController;
 
     // UI GameObjects that hold New Child Stats
     public GameObject addingChildName;
     public GameObject addingChildSize;
 
-    private void Awake()
-    {
-        //Initualize Save System into code
-        SaveSystem.Init();
-    }
+    public void CreateNewChild() {
+        //Check if Child's Name exists and if you want to replace it (replace child, add to child, or back to menu)
 
-    public void AddToParent()
-    {
-        //Check if child exists?
-
+        //Add Button To ContentParent using name in the text of addingChildName
         //Create and store new button inside var
         GameObject newButton = Instantiate(ButtonToAdd, transform.position, Quaternion.identity, GameObject.Find("ContentParent").transform);
         int thisIndex = AddChildButton.transform.GetSiblingIndex();
-        string childNameString = addingChildName.GetComponent<InputField>().text;
-
+        string chlidName = addingChildName.GetComponent<InputField>().text;
+        float childSize = float.Parse(addingChildSize.GetComponent<InputField>().text);
+        //Set vars for newButton
         newButton.transform.SetSiblingIndex(thisIndex);
-        newButton.GetComponent<ChildButtonParented>().childName = childNameString;
+        newButton.GetComponent<ChildButtonParented>().childName = chlidName;
         newButton.SetActive(true);
 
-        //Create Child Json Save .txt
-        SaveNewChild();
+        //Add text in addingChildName to SaveSystem ChildList list
+        //SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
+        SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
 
-        //Add New child to order list
-        ChildOrderList.AddToEnd(childNameString);
+        //Activate Save function in SaveSystem
+        SaveSystemController.GetComponent<SettingsBinary>().SaveChildList();
 
+
+        //Create, Add, and Save weekly stats to new child save file
+        //SaveSystemController.GetComponent<ChildStatsBinary>().chlidID = chlidName;
+        SaveSystemController.GetComponent<ChildStatsBinary>().chlidName = chlidName;
+        SaveSystemController.GetComponent<ChildStatsBinary>().childSize = childSize;
+
+        //Check and Save New Child's Name as a new binary save file
+        SaveSystemController.GetComponent<ChildStatsBinary>().SaveSettings();
         
-        //This helps figure out the names of the components attached to an object
-        /*Component[] components = addingChildName.GetComponents(typeof(Component));
-        foreach(Component component in components) {
-            Debug.Log("This is the type of component " + component.ToString());
-        }*/
-        
-    }
 
-    private void SaveNewChild() {
-        //Get things to Save
-        string childName = addingChildName.GetComponent<InputField>().text;
-        float childSizePH = float.Parse(addingChildSize.GetComponent<InputField>().text);
-        
-        SaveObject saveObject = new SaveObject {
-            childName = childName,
-            childSizePH = childSizePH
-        };
-        string json = JsonUtility.ToJson(saveObject);
-        SaveSystem.Save(json, childName);
-
-        Debug.Log("Saved! Name: " + childName + ", Size: " + childSizePH);
-    }
-
-    // Save Object
-    private class SaveObject {
-        public string childName;
-        public float childSizePH;
     }
 }
