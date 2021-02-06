@@ -8,7 +8,7 @@ public class String_SO : ScriptableObject
     //public Object String;
     public string currentString;
 
-    public void UpdateInt(string v)
+    public void UpdateString(string v)
     {
         currentString = v;
     }

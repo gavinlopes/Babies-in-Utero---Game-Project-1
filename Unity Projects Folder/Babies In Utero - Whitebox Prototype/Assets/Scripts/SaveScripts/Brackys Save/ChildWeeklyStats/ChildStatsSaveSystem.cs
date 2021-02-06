@@ -9,7 +9,7 @@ public static class ChildStatsSaveSystem
     // Settings Data
     public static void SaveSettings (ChildStatsBinary childStatsBinary, string childName) {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath +  "/"+ childName +"Stats.sav";
+        string path = Application.persistentDataPath +  "/_"+ childName +"_Stats.sav";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         ChildStatsData data = new ChildStatsData(childStatsBinary);
@@ -19,7 +19,7 @@ public static class ChildStatsSaveSystem
     }
 
     public static ChildStatsData LoadSettings (string childName) {
-        string path = Application.persistentDataPath + "/"+ childName +"Stats.sav";
+        string path = Application.persistentDataPath + "/_"+ childName +"_Stats.sav";
         if (File.Exists(path)) {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);

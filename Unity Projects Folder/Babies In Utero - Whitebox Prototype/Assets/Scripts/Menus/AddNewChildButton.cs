@@ -17,34 +17,45 @@ public class AddNewChildButton : MonoBehaviour
 
     public void CreateNewChild() {
         //Check if Child's Name exists and if you want to replace it (replace child, add to child, or back to menu)
-
-        //Add Button To ContentParent using name in the text of addingChildName
-        //Create and store new button inside var
-        GameObject newButton = Instantiate(ButtonToAdd, transform.position, Quaternion.identity, GameObject.Find("ContentParent").transform);
-        int thisIndex = AddChildButton.transform.GetSiblingIndex();
         string chlidName = addingChildName.GetComponent<InputField>().text;
-        float childSize = float.Parse(addingChildSize.GetComponent<InputField>().text);
-        //Set vars for newButton
-        newButton.transform.SetSiblingIndex(thisIndex);
-        newButton.GetComponent<ChildButtonParented>().childName = chlidName;
-        newButton.SetActive(true);
+        int checkIfNewChildHasPosition = SaveSystemController.GetComponent<SettingsBinary>().childList.IndexOf(chlidName);
+        int countNum = 0;
 
-        //Add text in addingChildName to SaveSystem ChildList list
-        //SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
-        SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
+        //Check for and make duplicate children with a number at the end
+        while (checkIfNewChildHasPosition != -1)
+        {
+            countNum++;
+            checkIfNewChildHasPosition = SaveSystemController.GetComponent<SettingsBinary>().childList.IndexOf(chlidName + countNum.ToString());
+        }
+        if (countNum > 0) {chlidName = chlidName + countNum.ToString();}
 
-        //Activate Save function in SaveSystem
-        SaveSystemController.GetComponent<SettingsBinary>().SaveChildList();
+        if (checkIfNewChildHasPosition == -1) {
+            //Add Button To ContentParent using name in the text of addingChildName
+            //Create and store new button inside var
+            GameObject newButton = Instantiate(ButtonToAdd, transform.position, Quaternion.identity, GameObject.Find("ContentParent").transform);
+            int thisIndex = AddChildButton.transform.GetSiblingIndex();
+            float childSize = float.Parse(addingChildSize.GetComponent<InputField>().text);
+            //Set vars for newButton
+            newButton.transform.SetSiblingIndex(thisIndex);
+            newButton.GetComponent<ChildButtonParented>().childName = chlidName;
+            newButton.SetActive(true);
+
+            //Add text in addingChildName to SaveSystem ChildList list
+            //SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
+            SaveSystemController.GetComponent<SettingsBinary>().childList.Add(chlidName);
+
+            //Activate Save function in SaveSystem
+            SaveSystemController.GetComponent<SettingsBinary>().SaveChildList();
 
 
-        //Create, Add, and Save weekly stats to new child save file
-        //SaveSystemController.GetComponent<ChildStatsBinary>().chlidID = chlidName;
-        SaveSystemController.GetComponent<ChildStatsBinary>().chlidName = chlidName;
-        SaveSystemController.GetComponent<ChildStatsBinary>().childSize = childSize;
+            //Create, Add, and Save weekly stats to new child save file
+            //SaveSystemController.GetComponent<ChildStatsBinary>().chlidID = chlidName;
+            SaveSystemController.GetComponent<ChildStatsBinary>().chlidName = chlidName;
+            SaveSystemController.GetComponent<ChildStatsBinary>().childSize = childSize;
 
-        //Check and Save New Child's Name as a new binary save file
-        SaveSystemController.GetComponent<ChildStatsBinary>().SaveSettings();
+            //Check and Save New Child's Name as a new binary save file
+            SaveSystemController.GetComponent<ChildStatsBinary>().SaveSettings();
         
-
+        }
     }
 }
