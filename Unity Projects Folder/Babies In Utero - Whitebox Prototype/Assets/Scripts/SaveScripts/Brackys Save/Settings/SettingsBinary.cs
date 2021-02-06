@@ -21,6 +21,7 @@ public class SettingsBinary : MonoBehaviour
     private void Awake() {
         LoadSettings();
         LoadChildList();
+        checkForEmptyChildList();
     }
 
     // Settings Data
@@ -41,7 +42,6 @@ public class SettingsBinary : MonoBehaviour
     // Child Data
     public void SaveChildList () {
         SettingsSaveSystem.SaveChildList(this);
-        Debug.Log("save child list");
     }
 
     public void LoadChildList () {
@@ -49,13 +49,13 @@ public class SettingsBinary : MonoBehaviour
 
         childList.Clear();
 
+        //Add any children back to the list
         for (int i = 0; i < data.childList.Length; i++) {
             childList.Add(data.childList[i]);
 
             //Create Child Buttons
             AddChildButton(data.childList[i]);
         }
-        Debug.Log("load child list");
     }
 
     
@@ -69,5 +69,18 @@ public class SettingsBinary : MonoBehaviour
         newButton.transform.SetSiblingIndex(thisIndex);
         newButton.GetComponent<ChildButtonParented>().childName = childName;
         newButton.SetActive(true);
+    }
+
+    
+    private void checkForEmptyChildList() {
+        ChildListData data = SettingsSaveSystem.LoadChildList();
+        //If empty add default child
+        if (data.childList.Length == 0) {
+            this.GetComponent<ChildStatsBinary>().setStatDefults();
+            this.GetComponent<ChildStatsBinary>().SaveSettings();
+            childList.Add("Default Child");
+            SaveChildList();
+            LoadChildList();
+        }
     }
 }

@@ -78,10 +78,10 @@ public class ChildStatsBinary : MonoBehaviour
         }
     }
 
-    void setStatDefults() {
+    public void setStatDefults() {
         //Name and Sex
-        chlidName = "DefaultChild";
-        childSex = "Unknown"; 
+        chlidName = "Default Child";
+        childSex = "Unknown";
         
         //Dates
         dueDate[0] = 7;
