@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 //C:\Users\Nathan E\AppData\LocalLow\DefaultCompany\Babies In Utero - Whitebox Prototype
 
@@ -19,9 +20,21 @@ public class SettingsBinary : MonoBehaviour
     public List<string> childList = new List<string>();
 
     private void Awake() {
-        LoadSettings();
-        LoadChildList();
-        checkForEmptyChildList();
+        string path = Application.persistentDataPath + "/settings.saV";
+        if (!File.Exists(path)) {
+            SettingsSaveSystem.SaveSettings(this);
+        } else {
+            LoadSettings();
+        }
+        
+        path = Application.persistentDataPath + "/childList.saV";
+        if (!File.Exists(path)) {
+            SettingsSaveSystem.SaveChildList(this);
+            checkForEmptyChildList();
+        } else {
+            LoadChildList();
+            checkForEmptyChildList();
+        }
     }
 
     // Settings Data
@@ -48,7 +61,7 @@ public class SettingsBinary : MonoBehaviour
         ChildListData data = SettingsSaveSystem.LoadChildList();
 
         childList.Clear();
-
+        
         //Add any children back to the list
         for (int i = 0; i < data.childList.Length; i++) {
             childList.Add(data.childList[i]);

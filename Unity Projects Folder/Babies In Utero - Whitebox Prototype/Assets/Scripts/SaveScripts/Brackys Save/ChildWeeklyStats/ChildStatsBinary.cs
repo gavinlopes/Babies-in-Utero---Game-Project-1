@@ -4,11 +4,13 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 //C:\Users\Nathan E\AppData\LocalLow\DefaultCompany\Babies In Utero - Whitebox Prototype
 
 public class ChildStatsBinary : MonoBehaviour
 {
+    public String_SO selectedChild;
     //Name and Sex
     public string chlidName;
     public string childSex; // 0 = Unknown, 1 = Boy, 2 = Girl
@@ -34,7 +36,11 @@ public class ChildStatsBinary : MonoBehaviour
 
 
     void Start() {
-        setStatDefults();
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        if (buildIndex!=0) {
+            chlidName = selectedChild.currentString;
+            LoadSettings();
+        }
     }
 
     // Child Stats Data
