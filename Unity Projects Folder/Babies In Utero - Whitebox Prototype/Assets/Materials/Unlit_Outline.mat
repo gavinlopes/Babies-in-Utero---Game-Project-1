@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _Amount: 0.094
+    - _Amount: 0.005
     - _Amplitude: 1
     - _CutoutThresh: 1
     - _Distance: 1
