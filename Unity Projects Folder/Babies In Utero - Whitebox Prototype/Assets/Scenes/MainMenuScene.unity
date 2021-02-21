@@ -18371,9 +18371,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: 3rd Person
+    - m_Text: Outside Child
       m_Image: {fileID: 0}
-    - m_Text: Baby Vision
+    - m_Text: Child Eyes
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25094,7 +25094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3rd Person
+  m_Text: Outside Child
 --- !u!222 &2144358502
 CanvasRenderer:
   m_ObjectHideFlags: 0
