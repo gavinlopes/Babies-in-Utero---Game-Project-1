@@ -9,8 +9,10 @@ using System.IO;
 public class SettingsBinary : MonoBehaviour
 {
     //Saving and Loading Settings
-    public GameObject voiceVolumeSlider;
     public GameObject musicVolumeSlider;
+    public GameObject effectsVolumeSlider;
+    public GameObject voiceVolumeSlider;
+    
     public GameObject cameraViewToggle;
     public GameObject sightReticleToggle;
     
@@ -46,9 +48,10 @@ public class SettingsBinary : MonoBehaviour
         SettingsData data = SettingsSaveSystem.LoadSettings();
 
         voiceVolumeSlider.GetComponent<Slider>().value = data.voiceVolume;
+        effectsVolumeSlider.GetComponent<Slider>().value = data.effectsVolume;
         musicVolumeSlider.GetComponent<Slider>().value = data.musicVolume;
 
-        cameraViewToggle.GetComponent<Dropdown>().value = data.cameraView;//GetComponent<ToggleController>().isOn = data.cameraView;
+        cameraViewToggle.GetComponent<ToggleController>().isOn = data.cameraView;
         sightReticleToggle.GetComponent<ToggleController>().isOn = data.sightReticle;
     }
 
