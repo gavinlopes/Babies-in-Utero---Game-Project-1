@@ -8,8 +8,9 @@ public class LoadChildName : MonoBehaviour
     public String_SO selectedChildSO;
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         this.GetComponent<Text>().text = selectedChildSO.currentString;
     }
+    
 }
