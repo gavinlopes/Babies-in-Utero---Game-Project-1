@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: b1cf001fbd649e14b95269658e51eba4, type: 3}
+        m_Texture: {fileID: 2800000, guid: fdf5cdfe756b5114b9644661e39c7b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -94,7 +94,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnableExternalAlpha: 0
-    - _Exposure: 1
+    - _Exposure: 0.34
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -114,4 +114,4 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 0.2627451}
-    - _Tint: {r: 0.43529412, g: 0.2784314, b: 0.35338712, a: 1}
+    - _Tint: {r: 0.49056602, g: 0.26148093, b: 0.32496753, a: 1}
