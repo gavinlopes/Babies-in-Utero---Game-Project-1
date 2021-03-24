@@ -13,27 +13,27 @@ public class UnityRig_ApplyMesurements : MonoBehaviour
     public float armLength;
     public float legLength;
     [Header("Body Parts")]
-    public GameObject Spine01_Scale;
-    public GameObject Spine02_Scale;
-    public GameObject Spine03_Scale;
-    public GameObject Neck01_Scale;
-    public GameObject Neck02_Scale;
-    public GameObject Head_Scale;
-    public GameObject LClav_Scale;
-    public GameObject LArm01_Scale;
-    public GameObject LArm02_Scale;
-    public GameObject LArm03_Scale;
-    public GameObject RClav_Scale;
-    public GameObject RArm01_Scale;
-    public GameObject RArm02_Scale;
-    public GameObject RArm03_Scale;
-    public GameObject Pelvis_Scale;
-    public GameObject LLeg01_Scale;
-    public GameObject LLeg02_Scale;
-    public GameObject LLeg03_Scale;
-    public GameObject RLeg01_Scale;
-    public GameObject RLeg02_Scale;
-    public GameObject RLeg03_Scale;
+    public GameObject Spine01_Joint;
+    public GameObject Spine02_Joint;
+    public GameObject Spine03_Joint;
+    public GameObject Neck01_Joint;
+    public GameObject Neck02_Joint;
+    public GameObject Head_Joint;
+    public GameObject LClav_Joint;
+    public GameObject LArm01_Joint;
+    public GameObject LArm02_Joint;
+    public GameObject LArm03_Joint;
+    public GameObject RClav_Joint;
+    public GameObject RArm01_Joint;
+    public GameObject RArm02_Joint;
+    public GameObject RArm03_Joint;
+    public GameObject Pelvis_Joint;
+    public GameObject LLeg01_Joint;
+    public GameObject LLeg02_Joint;
+    public GameObject LLeg03_Joint;
+    public GameObject RLeg01_Joint;
+    public GameObject RLeg02_Joint;
+    public GameObject RLeg03_Joint;
 
     public void Update()
     {
@@ -77,38 +77,38 @@ public class UnityRig_ApplyMesurements : MonoBehaviour
 
     void HeadToRump(float hr)
     {
-        Spine01_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        Spine02_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        Spine03_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        Pelvis_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        Neck01_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        Neck02_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        LClav_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        RClav_Scale.transform.localScale = new Vector3(hr, hr, hr);
+        Spine01_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Spine02_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Spine03_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Pelvis_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Neck01_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Neck02_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        LClav_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        RClav_Joint.transform.localScale = new Vector3(hr, hr, hr);
     }
 
     void HeadSize(float hdMajor, float hdMinor)
     {
-        Head_Scale.transform.localScale = new Vector3(hdMajor, hdMajor, hdMinor);
+        Head_Joint.transform.localScale = new Vector3(hdMajor, hdMajor, hdMinor);
     }
 
     void ArmsLength(float hr, float al)
     {
-        LArm01_Scale.transform.localScale = new Vector3(al, hr, hr);
-        LArm02_Scale.transform.localScale = new Vector3(al, hr, hr);
-        LArm03_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        RArm01_Scale.transform.localScale = new Vector3(al, hr, hr);
-        RArm02_Scale.transform.localScale = new Vector3(al, hr, hr);
-        RArm03_Scale.transform.localScale = new Vector3(hr, hr, hr);
+        LArm01_Joint.transform.localScale = new Vector3(al, hr, hr);
+        LArm02_Joint.transform.localScale = new Vector3(al, hr, hr);
+        LArm03_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        RArm01_Joint.transform.localScale = new Vector3(al, hr, hr);
+        RArm02_Joint.transform.localScale = new Vector3(al, hr, hr);
+        RArm03_Joint.transform.localScale = new Vector3(hr, hr, hr);
     }
 
     void LegsLength(float hr, float ll)
     {
-        LLeg01_Scale.transform.localScale = new Vector3(ll, hr, hr);
-        LLeg02_Scale.transform.localScale = new Vector3(ll, hr, hr);
-        LLeg03_Scale.transform.localScale = new Vector3(hr, hr, hr);
-        RLeg01_Scale.transform.localScale = new Vector3(ll, hr, hr);
-        RLeg02_Scale.transform.localScale = new Vector3(ll, hr, hr);
-        RLeg03_Scale.transform.localScale = new Vector3(hr, hr, hr);
+        LLeg01_Joint.transform.localScale = new Vector3(ll, hr, hr);
+        LLeg02_Joint.transform.localScale = new Vector3(ll, hr, hr);
+        LLeg03_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        RLeg01_Joint.transform.localScale = new Vector3(ll, hr, hr);
+        RLeg02_Joint.transform.localScale = new Vector3(ll, hr, hr);
+        RLeg03_Joint.transform.localScale = new Vector3(hr, hr, hr);
     }
 }
