@@ -40,7 +40,7 @@ public class UnityRig_ApplyMesurements : MonoBehaviour
         //Pull Measurments
 
         //Average 27-Week Child Sizes
-        float avgHight = 36;
+        float avgHight = 36f;
         //float avgHeadCircumference = 44.21f;
         float avgHeadMajorDiameter = 8f;
         float avgHeadMinorDiameter = 6f;

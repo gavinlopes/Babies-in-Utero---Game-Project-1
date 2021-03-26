@@ -39,14 +39,14 @@ public class UnityRig_ApplyMesurements11Weeks : MonoBehaviour
     {
         //Pull Measurments
 
-        //Average 27-Week Child Sizes
-        float avgHight = 36;
+        //Average 11-Week Child Sizes
+        float avgHight = 4.2f;
         //float avgHeadCircumference = 44.21f;
-        float avgHeadMajorDiameter = 8f;
-        float avgHeadMinorDiameter = 6f;
-        float avgHeadToRump = (23f-avgHeadMajorDiameter)/4;
-        float avgArmLength = 13f/2;
-        float avgLegLength = 13f/2;
+        float avgHeadMajorDiameter = 0.933f;
+        float avgHeadMinorDiameter = 0.7f;
+        float avgHeadToRump = (2.68f-avgHeadMajorDiameter)/4;
+        float avgArmLength = 1.6f/2;
+        float avgLegLength = 1.6f/2;
 
         //Convert CM into IN
         if (centOnInchOff == false)
@@ -81,7 +81,7 @@ public class UnityRig_ApplyMesurements11Weeks : MonoBehaviour
         Spine02_Joint.transform.localScale = new Vector3(hr, hr, hr);
         Spine03_Joint.transform.localScale = new Vector3(hr, hr, hr);
         Pelvis_Joint.transform.localScale = new Vector3(hr, hr, hr);
-        Neck01_Joint.transform.localScale = new Vector3(hr, hr, hr);
+        Neck02_Joint.transform.localScale = new Vector3(hr, hr, hr);
         //Neck02_Joint.transform.localScale = new Vector3(hr, hr, hr);
         LClav_Joint.transform.localScale = new Vector3(hr, hr, hr);
         RClav_Joint.transform.localScale = new Vector3(hr, hr, hr);
@@ -89,7 +89,7 @@ public class UnityRig_ApplyMesurements11Weeks : MonoBehaviour
 
     void HeadSize(float hdMajor, float hdMinor)
     {
-        Neck02_Joint.transform.localScale = new Vector3(hdMajor, hdMajor, hdMinor);
+        Neck01_Joint.transform.localScale = new Vector3(hdMajor, hdMajor, hdMinor);
     }
 
     void ArmsLength(float hr, float al)
