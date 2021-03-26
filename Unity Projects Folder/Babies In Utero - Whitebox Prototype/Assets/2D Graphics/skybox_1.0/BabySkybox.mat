@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: 5baae72098b1d4c43a4852da5437987a, type: 3}
+        m_Texture: {fileID: 2800000, guid: fdf5cdfe756b5114b9644661e39c7b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 2800000, guid: 1b0225c40ed5542ed89a708911596138, type: 3}
+        m_Texture: {fileID: 2800000, guid: b1cf001fbd649e14b95269658e51eba4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: 5bb5d0a0fe66f46668f6b8e8af2a30d6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5778540299754404bab558e09dd765d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: 3418b4b682e8b4cc0969b52f85446632, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4d13eda43427a3a47b025ff3b2bc75c3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
-        m_Texture: {fileID: 2800000, guid: 8be2bbd67e0eb4348a95662d8dca46da, type: 3}
+        m_Texture: {fileID: 2800000, guid: df498132e8c2f324598ae1712863e4f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tex:
@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 2800000, guid: 201c8927520a3416fa530447b29858b2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4d7434901a2c2484f9493dcc6df468a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
