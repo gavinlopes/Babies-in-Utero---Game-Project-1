@@ -9,16 +9,19 @@ public class ChildStatsData
 {
     //
     public string chlidName;
-    public string childSex; // 0 = Unknown, 1 = Boy, 2 = Girl
+    public int childSex; // 0 = Unknown, 1 = Boy, 2 = Girl
 
-    public int[] dueDate = new int[3]; //[0]=day, [1]=month, [2]=year
-    public int[] birthDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    //public int[] dueDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    //public int[] birthDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    public string dueDate;
+    public string birthDate;
 
-    public float childSize; //Test
+    public bool CmOrIn; //Cm Or In
 
-    static int totalWeeks = 52;
-    public float[] headDiameter = new float[totalWeeks];
-    public float[] headCircumference = new float[totalWeeks];
+    static int totalWeeks = 3;
+    public bool[] setUpWeek = new bool[totalWeeks]; //This is to indicate whether or not the week has had settings saved to it
+    public float[] headDiameterMajor = new float[totalWeeks];
+    public float[] headDiameterMinor = new float[totalWeeks];
     public float[] headRumpLength = new float[totalWeeks];
     public float[] armLength = new float[totalWeeks];
     public float[] legLength = new float[totalWeeks];
@@ -36,18 +39,21 @@ public class ChildStatsData
         //Dates
         for (int i = 0; i < 3; i++)
         {
-            dueDate[i] = childStatsBinary.dueDate[i];
-            birthDate[i] = childStatsBinary.birthDate[i];
+            //dueDate[i] = childStatsBinary.dueDate[i];
+            //birthDate[i] = childStatsBinary.birthDate[i];
+            dueDate = childStatsBinary.dueDate;
+            birthDate = childStatsBinary.birthDate;
         }
 
-        //Delete this one later
-        childSize = childStatsBinary.childSize; //Test
+        //Measurments
+        CmOrIn = childStatsBinary.CmOrIn; //Cm Or In
 
         //Weekly Stats
         for (int i = 0; i < totalWeeks; i++)
         {
-            headDiameter[i] = childStatsBinary.headDiameter[i];
-            headCircumference[i] = childStatsBinary.headCircumference[i];
+            setUpWeek[i] = childStatsBinary.setUpWeek[i];
+            headDiameterMajor[i] = childStatsBinary.headDiameterMajor[i];
+            headDiameterMinor[i] = childStatsBinary.headDiameterMinor[i];
             headRumpLength[i] = childStatsBinary.headRumpLength[i];
             armLength[i] = childStatsBinary.armLength[i];
             legLength[i] = childStatsBinary.legLength[i];

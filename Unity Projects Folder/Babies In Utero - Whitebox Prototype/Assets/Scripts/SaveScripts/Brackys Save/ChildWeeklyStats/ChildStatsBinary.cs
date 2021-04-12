@@ -13,19 +13,22 @@ public class ChildStatsBinary : MonoBehaviour
     public String_SO selectedChild;
     //Name and Sex
     public string chlidName;
-    public string childSex; // 0 = Unknown, 1 = Boy, 2 = Girl
+    public int childSex; // 0 = Unknown, 1 = Boy, 2 = Girl
 
     //Dates
-    public int[] dueDate = new int[3]; //[0]=day, [1]=month, [2]=year
-    public int[] birthDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    //public int[] dueDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    //public int[] birthDate = new int[3]; //[0]=day, [1]=month, [2]=year
+    public string dueDate;
+    public string birthDate;
 
-    //Test (delete when done with)
-    public float childSize; //Test
+    //Measurments type
+    public bool CmOrIn;
 
     //Weekly Stats
-    static int totalWeeks = 52;
-    public float[] headDiameter = new float[totalWeeks];
-    public float[] headCircumference = new float[totalWeeks];
+    static int totalWeeks = 3;
+    public bool[] setUpWeek = new bool[totalWeeks]; //This is to indicate whether or not the week has had settings saved to it
+    public float[] headDiameterMajor = new float[totalWeeks];
+    public float[] headDiameterMinor = new float[totalWeeks];
     public float[] headRumpLength = new float[totalWeeks];
     public float[] armLength = new float[totalWeeks];
     public float[] legLength = new float[totalWeeks];
@@ -56,18 +59,21 @@ public class ChildStatsBinary : MonoBehaviour
         //Dates
         for (int i = 0; i < 3; i++)
         {
-            dueDate[i] = ChildStatsSaveSystem.LoadSettings(chlidName).dueDate[i];
-            birthDate[i] = ChildStatsSaveSystem.LoadSettings(chlidName).birthDate[i];
+            //dueDate[i] = ChildStatsSaveSystem.LoadSettings(chlidName).dueDate[i];
+            //birthDate[i] = ChildStatsSaveSystem.LoadSettings(chlidName).birthDate[i];
+            dueDate = ChildStatsSaveSystem.LoadSettings(chlidName).dueDate;
+            birthDate = ChildStatsSaveSystem.LoadSettings(chlidName).birthDate;
         }
 
-        //Delete this one later
-        childSize = ChildStatsSaveSystem.LoadSettings(chlidName).childSize; //Test
+        //Mesurements
+        CmOrIn = ChildStatsSaveSystem.LoadSettings(chlidName).CmOrIn; 
 
         //Weekly Stats
         for (int i = 0; i < totalWeeks; i++)
         {
-            headDiameter[i] = ChildStatsSaveSystem.LoadSettings(chlidName).headDiameter[i];
-            headCircumference[i] = ChildStatsSaveSystem.LoadSettings(chlidName).headCircumference[i];
+            setUpWeek[i] = ChildStatsSaveSystem.LoadSettings(chlidName).setUpWeek[i];
+            headDiameterMajor[i] = ChildStatsSaveSystem.LoadSettings(chlidName).headDiameterMajor[i];
+            headDiameterMinor[i] = ChildStatsSaveSystem.LoadSettings(chlidName).headDiameterMinor[i];
             headRumpLength[i] = ChildStatsSaveSystem.LoadSettings(chlidName).headRumpLength[i];
             armLength[i] = ChildStatsSaveSystem.LoadSettings(chlidName).armLength[i];
             legLength[i] = ChildStatsSaveSystem.LoadSettings(chlidName).legLength[i];
@@ -87,53 +93,89 @@ public class ChildStatsBinary : MonoBehaviour
     public void setStatDefults() {
         //Name and Sex
         chlidName = "Default Child";
-        childSex = "Unknown";
+        childSex = 0;
         
         //Dates
-        dueDate[0] = 7;
-        birthDate[0] = 7;
-        dueDate[1] = 4;
-        birthDate[1] = 4;
-        dueDate[2] = 2021;
-        birthDate[2] = 2021;
+        dueDate = "4/7/2021";
+        birthDate = "4/7/2021";
 
-        //Delete this one later
-        childSize = 1; //Test
+        //Mesurments
+        CmOrIn = true; //cm = true
 
         //Weekly Stats
-        for (int i = 0; i < totalWeeks; i++)
+        /*for (int i = 0; i < totalWeeks; i++)
         {
             //Calculate avrages and put them here
-            headDiameter[i] = -1;
-            headCircumference[i] = -1;
-            headRumpLength[i] = -1;
-            armLength[i] = -1;
-            legLength[i] = -1;
-        }
+            headDiameterMajor[i] = 8;
+            headDiameterMinor[i] = 6;
+            headRumpLength[i] = 23;
+            armLength[i] = 14;
+            legLength[i] = 14;
+        }*/
+        //Week 11
+        headDiameterMajor[0] = 0.933f;
+        headDiameterMinor[0] = 0.7f;
+        headRumpLength[0] = 2.68f;
+        armLength[0] = 1.6f;
+        legLength[0] = 1.6f;
+        //Week 15
+        headDiameterMajor[1] = 3.65f;
+        headDiameterMinor[1] = 2.73f;
+        headRumpLength[1] = 10.48f;
+        armLength[1] = 5.92f;
+        legLength[1] = 5.92f;
+        //Week 27
+        headDiameterMajor[2] = 8;
+        headDiameterMinor[2] = 6;
+        headRumpLength[2] = 23;
+        armLength[2] = 14;
+        legLength[2] = 14;
 
     }
 
     void setNewChild() {
         //Name and Sex
         chlidName = "Child ";
-        childSex = "Unknown";
+        childSex = 0;
+        CmOrIn = true;
         
         //Dates
-        for (int i = 0; i < 3; i++)
+        /*for (int i = 0; i < 3; i++)
         {
             dueDate[i] = 0;
             birthDate[i] = 0;
-        }
+        }*/
+        dueDate = "Unknown";
+        birthDate = "Unkown";
 
         //Weekly Stats
-        for (int i = 0; i < totalWeeks; i++)
+        /*for (int i = 0; i < totalWeeks; i++)
         {
-            headDiameter[i] = -1;
-            headCircumference[i] = -1;
+            headDiameterMajor[i] = -1;
+            headDiameterMinor[i] = -1;
             headRumpLength[i] = -1;
             armLength[i] = -1;
             legLength[i] = -1;
-        }
+        }*/
+        
+        //Week 11
+        headDiameterMajor[0] = 0.933f;
+        headDiameterMinor[0] = 0.7f;
+        headRumpLength[0] = 2.68f;
+        armLength[0] = 1.6f;
+        legLength[0] = 1.6f;
+        //Week 15
+        headDiameterMajor[1] = 3.65f;
+        headDiameterMinor[1] = 2.73f;
+        headRumpLength[1] = 10.48f;
+        armLength[1] = 5.92f;
+        legLength[1] = 5.92f;
+        //Week 27
+        headDiameterMajor[2] = 8;
+        headDiameterMinor[2] = 6;
+        headRumpLength[2] = 23;
+        armLength[2] = 14;
+        legLength[2] = 14;
 
     }
 }
