@@ -178,4 +178,8 @@ public class ChildStatsBinary : MonoBehaviour
         legLength[2] = 14;
 
     }
+
+    public void UpdateViewingWeek(int newWeek) {
+        viewingWeek = newWeek;
+    }
 }

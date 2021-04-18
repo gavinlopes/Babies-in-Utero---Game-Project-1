@@ -70,7 +70,7 @@ public class UpdateChildButton : MonoBehaviour
         //Check if Child's Name exists and if you want to replace it (replace child, add to child, or back to menu)
         string newChildName = addingChildName.GetComponent<InputField>().text;
         int checkIfNewChildHasPosition = saveSystemController.GetComponent<SettingsBinary>().childList.IndexOf(newChildName);
-        int countNum = 0;
+        //int countNum = 0;
 
         //Check for and make duplicate children with a number at the end
         /*while (checkIfNewChildHasPosition != -1)
@@ -123,11 +123,27 @@ public class UpdateChildButton : MonoBehaviour
         addingChildSex.GetComponent<Dropdown>().value = saveSystemController.GetComponent<ChildStatsBinary>().childSex;
         addingChildDue.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().dueDate;
         addingChildBirth.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().birthDate;
-        addingChildHeadToRump.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headRumpLength[selectedWeek].ToString();
-        addingChildHeadDMajor.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMajor[selectedWeek].ToString();
-        addingChildHeadDMinor.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMinor[selectedWeek].ToString();
-        addingChildArmL.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().armLength[selectedWeek].ToString();
-        addingChildLegL.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().legLength[selectedWeek].ToString();
+
+        if (saveSystemController.GetComponent<ChildStatsBinary>().headRumpLength[selectedWeek] != 0) {
+            addingChildHeadToRump.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headRumpLength[selectedWeek].ToString();
+        } else {addingChildHeadToRump.GetComponent<InputField>().text = ""; }
+        
+        if (saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMajor[selectedWeek] != 0) {
+            addingChildHeadDMajor.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMajor[selectedWeek].ToString();
+        } else {addingChildHeadDMajor.GetComponent<InputField>().text = ""; }
+        
+        if (saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMinor[selectedWeek] != 0) {
+            addingChildHeadDMinor.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().headDiameterMinor[selectedWeek].ToString();
+        } else {addingChildHeadDMinor.GetComponent<InputField>().text = ""; }
+        
+        if (saveSystemController.GetComponent<ChildStatsBinary>().armLength[selectedWeek] != 0) {
+            addingChildArmL.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().armLength[selectedWeek].ToString();
+        } else {addingChildArmL.GetComponent<InputField>().text = ""; }
+        
+        if (saveSystemController.GetComponent<ChildStatsBinary>().legLength[selectedWeek] != 0) {
+            addingChildLegL.GetComponent<InputField>().text = saveSystemController.GetComponent<ChildStatsBinary>().legLength[selectedWeek].ToString();
+        } else {addingChildLegL.GetComponent<InputField>().text = ""; }
+
         addingCmOrIn.GetComponent<ToggleController>().isOn = saveSystemController.GetComponent<ChildStatsBinary>().CmOrIn;
     }
 }

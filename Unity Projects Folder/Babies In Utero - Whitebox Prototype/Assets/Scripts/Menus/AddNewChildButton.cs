@@ -25,6 +25,10 @@ public class AddNewChildButton : MonoBehaviour
 
     public GameObject addingSelectedWeek;
 
+    private void OnEnable() {
+        clearAllButtons();
+    }
+
     public void CreateNewChild() {
         //Check if Child's Name exists and if you want to replace it (replace child, add to child, or back to menu)
         string chlidName = addingChildName.GetComponent<InputField>().text;
@@ -102,5 +106,30 @@ public class AddNewChildButton : MonoBehaviour
             SaveSystemController.GetComponent<ChildStatsBinary>().SaveSettings();
         
         }
+
+    }
+      public void clearWeek() {
+        int selectedWeek = addingSelectedWeek.GetComponent<Dropdown>().value;
+        SaveSystemController.GetComponent<ChildStatsBinary>().setUpWeek[selectedWeek] = false;
+
+        SaveSystemController.GetComponent<ChildStatsBinary>().headDiameterMajor[selectedWeek] = 0;
+        SaveSystemController.GetComponent<ChildStatsBinary>().headDiameterMinor[selectedWeek] = 0;
+        SaveSystemController.GetComponent<ChildStatsBinary>().headRumpLength[selectedWeek] = 0;
+        SaveSystemController.GetComponent<ChildStatsBinary>().armLength[selectedWeek] = 0;
+        SaveSystemController.GetComponent<ChildStatsBinary>().legLength[selectedWeek] = 0;
+        //updateButtonsOnScreen();
+    }
+
+    public void clearAllButtons() {
+        addingChildName.GetComponent<InputField>().text = "";
+        addingChildSex.GetComponent<Dropdown>().value = 0;
+        addingChildDue.GetComponent<InputField>().text = "";
+        addingChildBirth.GetComponent<InputField>().text = "";
+        addingChildHeadToRump.GetComponent<InputField>().text = "";
+        addingChildHeadDMajor.GetComponent<InputField>().text = "";
+        addingChildHeadDMinor.GetComponent<InputField>().text = "";
+        addingChildArmL.GetComponent<InputField>().text = "";
+        addingChildLegL.GetComponent<InputField>().text = "";
+        addingCmOrIn.GetComponent<ToggleController>().isOn = true;
     }
 }

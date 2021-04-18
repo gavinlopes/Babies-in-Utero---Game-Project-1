@@ -23788,6 +23788,11 @@ PrefabInstance:
       propertyPath: offColorBg.b
       value: 0.6039216
       objectReference: {fileID: 0}
+    - target: {fileID: 114813106202897008, guid: f736ef895720643b3b2e8a3a5f092df6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114843458076090440, guid: f736ef895720643b3b2e8a3a5f092df6,
         type: 3}
       propertyPath: m_Sprite
@@ -27455,7 +27460,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Week 11-14
+  m_Text: Week 11
 --- !u!222 &2044897571
 CanvasRenderer:
   m_ObjectHideFlags: 0
