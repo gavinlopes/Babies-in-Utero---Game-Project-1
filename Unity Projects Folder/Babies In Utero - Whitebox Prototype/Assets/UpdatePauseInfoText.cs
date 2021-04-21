@@ -50,7 +50,7 @@ public class UpdatePauseInfoText : MonoBehaviour
         Kumquat
         */
         
-        string finalText = "\n" +  sexInfo[sexInt] + "\n" + dueInfo + "\n" + bornInfo + "\n \n \n" + headDMajor + CmOrIn + "\n" + headDMinor + CmOrIn + "\n" + hightInfo + CmOrIn + "\n \n" + sizeReff[selectedWeek];
+        string finalText = sexInfo[sexInt] + "\n" + dueInfo + "\n" + bornInfo + "\n \n \n" + headDMajor + CmOrIn + "\n" + headDMinor + CmOrIn + "\n \n" + hightInfo + CmOrIn + "\n \n" + sizeReff[selectedWeek];
 
         myText.text = finalText;
     }

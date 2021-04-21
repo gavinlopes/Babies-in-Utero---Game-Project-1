@@ -38,7 +38,7 @@ ModelImporter:
       name: W27 Idle 1
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
+      firstFrame: 1
       lastFrame: 199
       wrapMode: 0
       orientationOffsetY: 0
