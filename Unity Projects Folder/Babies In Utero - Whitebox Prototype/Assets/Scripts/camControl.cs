@@ -9,8 +9,16 @@ public class camControl : MonoBehaviour
     private Vector2 mD;
 	private Transform myBody;
 
-    public float speed = 3.5f;
-    private float X;
+    //public float speed = 3.5f;
+
+    private float firstX;
+    private float firstY;
+    private float lastX;
+    private float lastY;
+    private float currentX;
+    private float currentY;
+
+    public float X;
     private float Y;
 	
     void Start()
@@ -49,21 +57,37 @@ public class camControl : MonoBehaviour
         mD.y = Mathf.Clamp(mD.y, -90, 90);
         mD.x = Mathf.Clamp(mD.x, -90, 90);
     }*/
-    
+
     void Update() 
     {
-        if(Input.GetMouseButton(0)) 
-        {
-            transform.Rotate(new Vector3(Input.GetAxisRaw("Mouse Y") * speed, -Input.GetAxisRaw("Mouse X") * speed, 0));
-            X = transform.rotation.eulerAngles.x;
-            Y = transform.rotation.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(X, Y, 0);
+        if (Input.GetMouseButtonDown(0)) {
+            Vector3 mousePos = Input.mousePosition;
+            firstX = mousePos.x;
+            firstY = mousePos.y;
 
+            //Debug.Log("X = " + firstX);
+            //Debug.Log("Y = " + firstY);
+        }
+
+        if (Input.GetMouseButton(0)) {
+            Vector3 mousePos = Input.mousePosition;
+            lastX = mousePos.x;
+            lastY = mousePos.y;
+
+            X = (firstX - lastX)/5;
+            Y = (firstY - lastY)/5;
+            //this.transform.rotation = Quaternion.Euler(-Y, X, 0);
+
+            Y = Mathf.Clamp(Y, -80, 80);
+            X = Mathf.Clamp(X, -80, 80);
+
+            this.transform.localRotation = Quaternion.Euler(-Y, X, 0);
+
+            //Debug.Log(this.transform.rotation.x);
+            //Debug.Log(this.transform.localEulerAngles);
             
         }
         
-        //Y = Mathf.Clamp(Y, 0, 0);
-        //X = Mathf.Clamp(X, 0, 0);
     }
     
 }

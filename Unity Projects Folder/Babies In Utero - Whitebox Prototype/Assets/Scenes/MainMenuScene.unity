@@ -11447,6 +11447,8 @@ MonoBehaviour:
   voiceVolumeSlider: {fileID: 1421098761}
   cameraViewToggle: {fileID: 1616043733}
   sightReticleToggle: {fileID: 1712531185}
+  cameraView: 0
+  sightReticle: 0
   ButtonToDuplicate: {fileID: 1890490116}
   LastButtonInList: {fileID: 1492885601}
   childList: []
@@ -27247,7 +27249,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831528772}
   m_HandleRect: {fileID: 831528771}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -27631,6 +27633,11 @@ PrefabInstance:
         type: 3}
       propertyPath: offColorBg.b
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813106202897008, guid: f736ef895720643b3b2e8a3a5f092df6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114843458076090440, guid: f736ef895720643b3b2e8a3a5f092df6,
         type: 3}

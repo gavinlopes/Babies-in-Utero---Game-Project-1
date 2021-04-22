@@ -15,6 +15,9 @@ public class SettingsBinary : MonoBehaviour
     
     public GameObject cameraViewToggle;
     public GameObject sightReticleToggle;
+
+    public bool cameraView;
+    public bool sightReticle;
     
     //Saving and Loading Children
     public GameObject ButtonToDuplicate;
@@ -46,6 +49,9 @@ public class SettingsBinary : MonoBehaviour
 
     public void LoadSettings () {
         SettingsData data = SettingsSaveSystem.LoadSettings();
+
+        cameraView = data.cameraView;
+        sightReticle = data.sightReticle;
 
         voiceVolumeSlider.GetComponent<Slider>().value = data.voiceVolume;
         effectsVolumeSlider.GetComponent<Slider>().value = data.effectsVolume;
