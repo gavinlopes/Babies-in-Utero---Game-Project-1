@@ -9,6 +9,9 @@ public class UpdateCurrentWeekViewing : MonoBehaviour
     static int totalWeeks = 3;
     public GameObject[] weekUnityRig = new GameObject[totalWeeks];
 
+    public GameObject babyCam;
+    public GameObject[] camAnchor = new GameObject[totalWeeks];
+
     void Start() {
         UpdateWeeks();
     }
@@ -22,5 +25,8 @@ public class UpdateCurrentWeekViewing : MonoBehaviour
         }
         
         weekUnityRig[saveSystemController.GetComponent<ChildStatsBinary>().viewingWeek].SetActive(true);
+        babyCam.transform.parent = camAnchor[saveSystemController.GetComponent<ChildStatsBinary>().viewingWeek].transform;
+        babyCam.transform.localPosition = Vector3.zero;
+        babyCam.transform.parent = camAnchor[saveSystemController.GetComponent<ChildStatsBinary>().viewingWeek].transform.parent.parent.parent;
     }
 }

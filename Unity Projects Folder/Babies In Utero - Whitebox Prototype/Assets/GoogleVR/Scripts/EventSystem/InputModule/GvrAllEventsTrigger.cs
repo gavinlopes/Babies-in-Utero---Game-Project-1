@@ -71,6 +71,13 @@ public class GvrAllEventsTrigger : MonoBehaviour
         Justification = "Legacy Public API.")]
     public TriggerEvent OnScroll;
 
+    /// <summary>Event for `AfterSecond`.</summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "UnityRules.LegacyGvrStyleRules",
+        "VR1003:FieldsMustBeLowerCamelCase",
+        Justification = "Legacy Public API.")]
+    public TriggerEvent AfterSecond;
+
     private bool listenersAdded;
 
     private void OnEnable()
@@ -108,6 +115,7 @@ public class GvrAllEventsTrigger : MonoBehaviour
         eventExecutor.OnPointerEnter += OnPointerEnterHandler;
         eventExecutor.OnPointerExit += OnPointerExitHandler;
         eventExecutor.OnScroll += OnScrollHandler;
+        eventExecutor.AfterSecond += AfterSecondHandler;
 
         listenersAdded = true;
     }
@@ -131,6 +139,7 @@ public class GvrAllEventsTrigger : MonoBehaviour
         eventExecutor.OnPointerEnter -= OnPointerEnterHandler;
         eventExecutor.OnPointerExit -= OnPointerExitHandler;
         eventExecutor.OnScroll -= OnScrollHandler;
+        eventExecutor.AfterSecond -= AfterSecondHandler;
 
         listenersAdded = false;
     }
@@ -164,6 +173,13 @@ public class GvrAllEventsTrigger : MonoBehaviour
     {
         OnScroll.Invoke(target, eventData);
     }
+
+    private void AfterSecondHandler(GameObject target, PointerEventData eventData)
+    {
+        AfterSecond.Invoke(target, eventData);
+    }
+
+    
 
     /// <summary>Exposes fired `PointerEventData` events.</summary>
     [Serializable]

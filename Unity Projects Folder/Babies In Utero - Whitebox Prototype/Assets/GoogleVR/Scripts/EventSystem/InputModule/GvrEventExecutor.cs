@@ -82,6 +82,15 @@ public class GvrEventExecutor : IGvrEventExecutor
         remove { RemoveEventDelegate<IScrollHandler>(value); }
     }
 
+    /// <summary>Adds or removes delegate functions for the `AfterSecond` event.</summary>
+    public event EventDelegate AfterSecond
+    {
+        add { AddEventDelegate<IScrollHandler>(value); }
+        remove { RemoveEventDelegate<IScrollHandler>(value); }
+    }
+
+    
+
     /// <summary>Execute the specified target, eventData and functor.</summary>
     /// <param name="target">The `GameObject` to execute this event behavior on.</param>
     /// <param name="eventData">The triggering EventData.</param>
