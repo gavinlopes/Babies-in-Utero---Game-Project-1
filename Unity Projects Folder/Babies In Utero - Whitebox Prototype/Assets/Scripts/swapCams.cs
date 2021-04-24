@@ -9,6 +9,7 @@ public class swapCams : MonoBehaviour
 	public Camera BabyCam;
 
     public DropDown_SO dropDownSO;
+    public GameObject saveSystem;
 
     public List<GameObject> playerObj = new List<GameObject>();
     public List<GameObject> babyObj = new List<GameObject>();
@@ -17,6 +18,9 @@ public class swapCams : MonoBehaviour
     void Start()
     {
         if (dropDownSO.DropdownIndex==0)
+        //SettingsData data = SettingsSaveSystem.LoadSettings();
+
+        //if (data.cameraView==false)
         {
             PlayerCam.gameObject.SetActive(true);
             MainReticle.transform.parent = PlayerCam.transform;
@@ -59,6 +63,9 @@ public class swapCams : MonoBehaviour
     public void CheckSwap()
     {
         if (dropDownSO.DropdownIndex==0)
+        //SettingsData data = SettingsSaveSystem.LoadSettings();
+
+        //if (data.cameraView==false)
         {
             PlayerCam.gameObject.SetActive(true);
             MainReticle.transform.parent = PlayerCam.transform;
